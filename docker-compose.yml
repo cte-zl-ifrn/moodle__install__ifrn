@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    restart: unless-stopped
+
+  db:
+    image: postgres:14.1-alpine
+    env_file:
+      - ./confs/enabled/db.env
+    volumes:
+      - "./volumes/pgdata:/var/lib/postgresql/data"
+    restart: unless-stopped
+
+  moodle:
+    image: "ctezlifrn/install_ifrn:3.11.4.1"
+    volumes:
+      - "./confs/enabled/apache2_mailhog.conf:/etc/apache2/conf-enabled/apache2_mailhog.conf"
+      - "./volumes/moodledata:/var/www/moodledata"
+    env_file:
+      - ./confs/enabled/db.env
+    ports:
+      - "${MOODLE_DOCKER_APACHE_PORT}:80"
+    restart: unless-stopped
+
+  redis:
+    image: redis:6.2.6-alpine
+    volumes:
+      - /docker/host/dir:/data
+    restart: unless-stopped
