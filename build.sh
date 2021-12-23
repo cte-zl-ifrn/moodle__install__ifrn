@@ -22,4 +22,5 @@ fi
 
 RELEASE=$1
 
+docker image rm -f $FULL_IMAGE_NAME:$RELEASE
 docker build . -t $FULL_IMAGE_NAME:$RELEASE
