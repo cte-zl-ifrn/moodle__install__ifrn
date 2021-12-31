@@ -1,3 +1,5 @@
+# Moodle 3.11.4, release 001, com PHP 7.4 
+
 ## Modules
 
 1. mod_bigbluebuttonbn = 2019101011
