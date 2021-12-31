@@ -49,7 +49,7 @@ RUN rm -f *.zip
 
 
 
-FROM ctezlifrn/moodle:3.11.4.001
+FROM ctezlifrn/moodle:3.11.4__001
 
 WORKDIR /var/www/html
 
