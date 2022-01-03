@@ -1,6 +1,6 @@
 # Instalação do Moodle do IFRN
 
-Instalação do Moodle do IFRN
+Exemplo de instalação do Moodle do IFRN usando a [imagem Docker 'moodle__image'.](https://github.com/cte-zl-ifrn/moodle__image) criada e disponbilizada pela CTE do IFRN.
 
 ## How to buid at local host?
 
